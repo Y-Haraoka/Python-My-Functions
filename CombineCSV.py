@@ -10,7 +10,7 @@ def CombineCSV(filepaths):
 
     for filepath in filepaths:
         df = pd.read_csv(filepath)
-        sample_id = os.path.splitext(os.path.basename(filepath))[0] 
-        df['sample'] = sample_id
+        filename = os.path.splitext(os.path.basename(filepath))[0] 
+        df['sample'] = filename
         All_df = pd.concat([All_df, df])
     return All_df
